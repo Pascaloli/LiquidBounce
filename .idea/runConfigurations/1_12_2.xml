@@ -1,0 +1,13 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="1.12.2" type="Application" factoryName="Application" singleton="false">
+    <option name="MAIN_CLASS_NAME" value="GradleStart" />
+    <module name="1.12.2.main" />
+    <option name="VM_PARAMETERS" value="-Dfml.coreMods.load=net.ccbluex.liquidbounce.injection.forge.MixinLoader" />
+    <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/1.12.2/run" />
+    <RunnerSettings RunnerId="Run" />
+    <ConfigurationWrapper RunnerId="Run" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
