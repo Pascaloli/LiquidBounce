@@ -17,6 +17,7 @@ import net.ccbluex.liquidbounce.features.special.AntiForge
 import net.ccbluex.liquidbounce.features.special.BungeeCordSpoof
 import net.ccbluex.liquidbounce.features.special.DonatorCape
 import net.ccbluex.liquidbounce.file.FileManager
+import net.ccbluex.liquidbounce.proxy.ProxyHandler
 import net.ccbluex.liquidbounce.script.ScriptManager
 import net.ccbluex.liquidbounce.script.remapper.Remapper.loadSrg
 import net.ccbluex.liquidbounce.tabs.BlocksTab
@@ -52,6 +53,7 @@ object LiquidBounce {
     lateinit var eventManager: EventManager
     lateinit var fileManager: FileManager
     lateinit var scriptManager: ScriptManager
+    lateinit var proxy : ProxyHandler
 
     // HUD & ClickGUI
     lateinit var hud: HUD
@@ -75,6 +77,9 @@ object LiquidBounce {
 
         ClientUtils.getLogger().info("Starting $CLIENT_NAME b$CLIENT_VERSION, by $CLIENT_CREATOR")
 
+        // Create proxy
+        proxy = ProxyHandler()
+
         // Create file manager
         fileManager = FileManager()
 
@@ -87,6 +92,7 @@ object LiquidBounce {
         eventManager.registerListener(BungeeCordSpoof())
         eventManager.registerListener(DonatorCape())
         eventManager.registerListener(InventoryUtils())
+        eventManager.registerListener(proxy)
 
         // Create command manager
         commandManager = CommandManager()
@@ -96,7 +102,7 @@ object LiquidBounce {
 
         // Setup module manager and register modules
         moduleManager = ModuleManager()
-        LiquidBounce.moduleManager.registerModules()
+        moduleManager.registerModules()
 
         // Remapper
         try {
@@ -115,7 +121,7 @@ object LiquidBounce {
 
         // Load configs
         fileManager.loadConfigs(fileManager.modulesConfig, fileManager.valuesConfig, fileManager.accountsConfig,
-                fileManager.friendsConfig, fileManager.xrayConfig, fileManager.shortcutsConfig)
+                fileManager.friendsConfig, fileManager.xrayConfig, fileManager.shortcutsConfig, fileManager.proxiesConfig)
 
         // ClickGUI
         clickGui = ClickGui()

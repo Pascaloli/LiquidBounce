@@ -10,6 +10,7 @@ import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.thealtening.AltService;
 import net.ccbluex.liquidbounce.LiquidBounce;
+import net.ccbluex.liquidbounce.ui.client.proxymanager.GuiProxyManager;
 import net.ccbluex.liquidbounce.ui.client.altmanager.sub.*;
 import net.ccbluex.liquidbounce.ui.client.altmanager.sub.altgenerator.GuiMCLeaks;
 import net.ccbluex.liquidbounce.ui.client.altmanager.sub.altgenerator.GuiTheAltening;
@@ -156,6 +157,8 @@ public class GuiAltManager extends GuiScreen {
         this.buttonList.add(new GuiButton(10, 5, j + 24 * 7 + 5, 90, 20, "Session Login"));
         this.buttonList.add(new GuiButton(11, 5, j + 24 * 8 + 10, 90, 20, "Cape"));
 
+        this.buttonList.add(new GuiButton(12, 5, j + 24 * 9 + 15, 90, 20, "ProxyManager"));
+
     }
 
     @Override
@@ -293,6 +296,9 @@ public class GuiAltManager extends GuiScreen {
                 break;
             case 11:
                 mc.displayGuiScreen(new GuiDonatorCape(this));
+                break;
+            case 12:
+                mc.displayGuiScreen(new GuiProxyManager(this));
                 break;
         }
     }
