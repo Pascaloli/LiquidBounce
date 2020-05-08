@@ -20,6 +20,8 @@
     "render.MixinEntityRenderer",
     "render.MixinFontRenderer",
     "gui.MixinGuiButton",
+    "gui.MixinGuiOptionSlider",
+    "gui.MixinGuiScreenOptionsSounds",
     "gui.MixinGuiChat",
     "gui.MixinGuiConnecting",
     "gui.MixinGuiDisconnect",
