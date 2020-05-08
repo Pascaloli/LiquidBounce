@@ -53,6 +53,9 @@ public abstract class MixinGuiScreen {
     protected FontRenderer fontRendererObj;
 
     @Shadow
+    public abstract void initGui();
+
+    @Shadow
     public void updateScreen() {
     }
 
