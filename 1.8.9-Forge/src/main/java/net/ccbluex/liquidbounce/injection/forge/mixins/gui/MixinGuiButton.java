@@ -97,7 +97,6 @@ public abstract class MixinGuiButton extends Gui {
                       this.enabled ? new Color(0F, 0F, 0F, this.alpha / 255F).getRGB() :
                       new Color(0.5F, 0.5F, 0.5F, 0.5F).getRGB());
 
-         mc.getTextureManager().bindTexture(buttonTextures);
          mouseDragged(mc, mouseX, mouseY);
 
          fontRenderer.drawStringWithShadow(displayString,
